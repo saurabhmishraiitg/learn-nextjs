@@ -34,3 +34,35 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Use `neon` for cloud serverless postgres DB
+
+- [Neon](https://neon.tech/) - a serverless Postgres database that is fast, scalable, and cost-effective.
+- <https://console.neon.tech/app/projects>
+
+- Install `neon-cli` globally
+
+  ```bash
+  brew install neonctl
+  ```
+
+- Authenticate with Neon
+
+  ```bash
+  neon auth
+  ```
+
+- Get connection string
+
+  ```bash
+  neon connection-string development --database-name neondb --psql
+  ```
+
+## Setup `drizzle` ORM to connect to Neon
+
+- Install `drizzle` and `pg` packages
+
+  ```bash
+  npm i drizzle-orm @neondatabase/serverless dotenv
+  npm i -D drizzle-kit tsx
+  ```
